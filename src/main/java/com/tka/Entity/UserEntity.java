@@ -13,4 +13,7 @@ public class UserEntity {
 	private String email;
 	private String password;
 	private List<String> skills; 
+	private  List<String> interests;
+	private int availability ;
+	private String location;
 }
