@@ -15,7 +15,4 @@ public class ProjectEntity {
  private String PostedBy;
  private int teamSize;
  private  String deadline;
- 
- 
-	
 }
