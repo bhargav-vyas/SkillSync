@@ -9,4 +9,6 @@ public class ApplicationEntiy {
 @Id
 private  int id;
 private  int userid;
+private  int projectid;
+
 }
