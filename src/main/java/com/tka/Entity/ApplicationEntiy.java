@@ -7,8 +7,8 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class ApplicationEntiy {
 @Id
-private  int id;
-private  int userid;
-private  int projectid;
+//private  int id;
+//private  int userid;
+//private  int projectid;
 
 }
