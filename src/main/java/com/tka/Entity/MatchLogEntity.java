@@ -7,5 +7,6 @@ import jakarta.persistence.Id;
 public class MatchLogEntity {
 @Id
 	private int id ;
+private String userA ;
 	
 }
