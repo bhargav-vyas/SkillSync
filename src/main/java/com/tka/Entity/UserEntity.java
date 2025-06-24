@@ -17,6 +17,6 @@ public class UserEntity {
 	private List<String> skills; 
 	@ElementCollection
 	private  List<String> interests;
-	private int availability ;
-	private String location;
+//	private int availability ;
+//	private String location;
 }
