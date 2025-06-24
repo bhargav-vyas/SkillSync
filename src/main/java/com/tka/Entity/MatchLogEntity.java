@@ -8,5 +8,7 @@ public class MatchLogEntity {
 @Id
 	private int id ;
 private String userA ;
+private String userB ;
+private Long score ;
 	
 }
