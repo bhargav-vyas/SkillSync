@@ -20,3 +20,4 @@ public class UserEntity {
 	private int availability ;
 	private String location;
 }
+ 
