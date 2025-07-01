@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tka.Entity.UserEntity;
-import com.tkaService.UserService;
+import com.tka.Service.UserService;
 
 @Controller
 @RestController
