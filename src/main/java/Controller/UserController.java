@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 	
-	@PostMapping
+	@PostMapping("/resister")
 	public  ResponseEntity<UserEntity> resisterUser(@RequestBody  UserEntity user){
 		UserEntity createUser =userservice.resisterUser(user); 
 		return ResponseEntity.ok(createUser);
