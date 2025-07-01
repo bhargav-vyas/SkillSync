@@ -20,8 +20,8 @@ public class ProjectEntity {
  @ElementCollection
  private List<String> requiredSkill;
  @ManyToOne
- @JoinColumn(name = "post_by_user_id")
- private String PostedBy;
+// @JoinColumn(name = "post_by_user_id")
+// private String PostedBy;
  private int teamSize;
  private  String deadline;
 }
