@@ -15,5 +15,6 @@ private  int id;
 private  UserEntity user;
 @ManyToOne
 private  ProjectEntity project;
+private String status;
 
 }
