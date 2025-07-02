@@ -27,7 +27,7 @@ public class UserController {
 		UserEntity createUser =userservice.resisterUser(user); 
 		return ResponseEntity.ok(createUser);	
 	}
-	@GetMapping
+	@GetMapping("/getall")
 	public  ResponseEntity<List<UserEntity>> getallUsers(){
 		 return ResponseEntity.ok(userservice.getAllUsers());
 	}

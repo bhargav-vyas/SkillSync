@@ -1,5 +1,7 @@
 package com.tka.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +17,9 @@ public class UserService {
 		return userrepository.save(user);
 	}
 
-	public Object getAllUsers() {
-		
+	public  List<UserEntity> getAllUsers() {
 		return userrepository.findAll();
 	}
+	
 	
 }
