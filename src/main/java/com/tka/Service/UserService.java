@@ -14,5 +14,10 @@ public class UserService {
 	public UserEntity resisterUser(UserEntity user) {
 		return userrepository.save(user);
 	}
+
+	public Object getAllUsers() {
+		
+		return userrepository.findAll();
+	}
 	
 }
