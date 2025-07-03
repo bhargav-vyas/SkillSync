@@ -1,6 +1,7 @@
 package com.tka.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class UserController {
  
 	@GetMapping("/getByUser/{id}")
 	public ResponseEntity<UserEntity> getUserById(@PathVariable int id){
-		
-		return userservice.getUserById(id);
+		Optional<UserEntity> user =userservice.getUserById(id)
+		return < ;
 	}
 }
