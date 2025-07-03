@@ -3,6 +3,7 @@ package com.tka.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,16 +15,21 @@ import jakarta.transaction.Transactional;
 @Service
 public class UserService {
 	@Autowired
-	private UserRepository userrepository;
+	private UserRepository userRepository;
 
 	public UserEntity resisterUser(UserEntity user) {
-		return userrepository.save(user);
+		return userRepository.save(user);
 	}
- @Transactional
+// @Transactional
+//
+//	public  List<UserEntity> getAllUsers() {
+//		return userrepository.findAll();
+//	}
 
-	public  List<UserEntity> getAllUsers() {
-		return userrepository.findAll();
+	public ResponseEntity<UserEntity> getUserById(int id) {
+		return userRepository.findById(id);
 	}
+	
 	
 	
 }
