@@ -2,6 +2,8 @@ package com.tka.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,7 @@ public class UserEntity {
 	private String email;
 	private String password;
 	@ElementCollection
+	 @JsonIgnore
 	private List<String> skills; 
 	@ElementCollection
 	private  List<String> interests;
