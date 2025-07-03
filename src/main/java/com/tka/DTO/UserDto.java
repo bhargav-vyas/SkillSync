@@ -1,5 +1,7 @@
 package com.tka.DTO;
 
+import java.util.List;
+
 public class UserDto {
 
 	  private int id;
@@ -8,4 +10,5 @@ public class UserDto {
 	    private int availability;
 	    private String location;
 	    private List<String> interests;
+	    
 }

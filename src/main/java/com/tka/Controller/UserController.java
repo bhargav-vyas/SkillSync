@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tka.DTO.UserDto;
 import com.tka.Entity.UserEntity;
 import com.tka.Service.UserService;
+
+import jakarta.transaction.Transactional;
 
 @Controller
 @RestController
@@ -23,11 +26,11 @@ import com.tka.Service.UserService;
 public class UserController {
 	
 	@Autowired
-	private UserService userservice;
+	private UserService userService;
 	
 	@PostMapping("/resister")
 	public  ResponseEntity<UserEntity> resisterUser(@RequestBody  UserEntity user){
-		UserEntity createUser =userservice.resisterUser(user); 
+		UserEntity createUser =userService.resisterUser(user); 
 		return ResponseEntity.ok(createUser);	
 	}
 //	@GetMapping("/getall")
@@ -35,8 +38,11 @@ public class UserController {
 //		 return ResponseEntity.ok(userservice.getAllUsers());
 //	}
  @JsonIgnore
-	@GetMapping("/getByUser/{id}")
-	public Optional<UserEntity> getUserById(@PathVariable int id){
-		return userservice.getUserById(id);
-	}
+ @Transactional
+ @GetMapping("/{id}")
+ public ResponseEntity<UserEntity> getUserById(@PathVariable int id) {
+     Optional<UserEntity> user = userService.getUserById(id);
+     return user.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+ }
 }
