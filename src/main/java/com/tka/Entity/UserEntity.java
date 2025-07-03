@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,10 +24,10 @@ public class UserEntity {
 	private String name;
 	private String email;
 	private String password;
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	 @JsonIgnore
 	private List<String> skills; 
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	private  List<String> interests;
 	private int availability ;
 	private String location;
