@@ -1,6 +1,7 @@
 package com.tka.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +26,8 @@ public class UserService {
 //	public  List<UserEntity> getAllUsers() {
 //		return userrepository.findAll();
 //	}
-
-	public ResponseEntity<UserEntity> getUserById(int id) {
+	@Transactional
+	public Optional<UserEntity> getUserById(int id) {
 		return userRepository.findById(id);
 	}
 	

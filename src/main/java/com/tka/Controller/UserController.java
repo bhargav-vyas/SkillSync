@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tka.Entity.UserEntity;
 import com.tka.Service.UserService;
 
@@ -33,10 +34,9 @@ public class UserController {
 //	public  ResponseEntity<List<UserEntity>> getallUsers(){
 //		 return ResponseEntity.ok(userservice.getAllUsers());
 //	}
- 
+ @JsonIgnore
 	@GetMapping("/getByUser/{id}")
-	public ResponseEntity<UserEntity> getUserById(@PathVariable int id){
-		Optional<UserEntity> user =userservice.getUserById(id)
-		return < ;
+	public Optional<UserEntity> getUserById(@PathVariable int id){
+		return userservice.getUserById(id);
 	}
 }
