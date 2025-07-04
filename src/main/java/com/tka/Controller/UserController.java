@@ -33,10 +33,10 @@ public class UserController {
 		UserEntity createUser =userService.resisterUser(user); 
 		return ResponseEntity.ok(createUser);	
 	}
-//	@GetMapping("/getall")
-//	public  ResponseEntity<List<UserEntity>> getallUsers(){
-//		 return ResponseEntity.ok(userservice.getAllUsers());
-//	}
+	@GetMapping("/getall")
+	public  ResponseEntity<List<UserEntity>> getallUsers(){
+		 return ResponseEntity.ok(userService.getAllUsers());
+	}
  @JsonIgnore
  @Transactional
  @GetMapping("/{id}")
