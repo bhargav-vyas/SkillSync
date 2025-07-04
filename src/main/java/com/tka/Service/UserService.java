@@ -31,6 +31,10 @@ public class UserService {
 	public Optional<UserEntity> getUserById(int id) {
 		return userRepository.findById(id);
 	}
+	public boolean login(String email, String password) {
+	
+		return false;
+	}
 	
 	
 	

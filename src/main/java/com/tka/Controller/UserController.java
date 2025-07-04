@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.tka.DTO.LoginRequest;
 import com.tka.DTO.UserDto;
 import com.tka.Entity.UserEntity;
 import com.tka.Service.UserService;
@@ -47,11 +48,12 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
  }
  @PostMapping("/login")
- public ResponseEntity<String> login(@RequestBody LoginRequest request) {
-     boolean isAuthenticated = userService.authenticate(request.getEmail(), request.getPassword());
-     if (isAuthenticated) {
-         return ResponseEntity.ok("Login successful");
-     } else {
-         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+ public ResponseEntity<String> login(@RequestBody UserDto  userDto) {
+     boolean isAuthenticated = userService.login(userDto.getEmail(), userDto.getPassword());
+     if(isAuthenticated) {
+    	 return ResponseEntity.ok("Login Successful");
+     }else {
+    	 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid password or email");
      }
+ }
 }
